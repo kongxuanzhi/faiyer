@@ -3,11 +3,15 @@
 <head>
     <title>flex test page</title>
     <style type="text/css">
+      body {
+        background: #3c3f41;
+      }
+
       .container {
         width: 1200px;
         height: 500px;
-        box-shadow: 10px 10px 5px #888888;
-        margin: 150px auto;
+        /*box-shadow: 10px 10px 5px #888888;*/
+        margin: 100px auto;
         display: flex;   /* flex | inline-flex | -webkit-flex Safari */
         flex-direction: row;  /*row | row-reverse | column | column-reverse; */
         flex-wrap: wrap; /* nowrap | wrap | wrap-reverse; */
@@ -18,8 +22,8 @@
       }
 
       .child {
-        width: 200px;
-        height: 200px;
+      /*  width: 200px;
+        height: 200px;*/
         background-color: orange;
         box-shadow: 10px 10px 5px #888888;
        /*  flex-grow:;
@@ -55,13 +59,15 @@
     </style>
 </head>
 <body>
-    <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool">阮一峰教程</a>
+    <!-- <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool">阮一峰教程</a> -->
     <a href="words.html">New Words</a>
-    <div class="container">
-      <div class="child child-1">1</div>
-      <div class="child child-2">2</div>
+     <div class="container">
+      <!-- <div class="child child-1"> -->
+        <img class="child" src="./images/design/observerPattern.png">
+      <!-- </div> -->
+    <!--   <div class="child child-2">2</div>
       <div class="child child-3">3</div>
-      <div class="child child-4">4</div>
-    </div>
+      <div class="child child-4">4</div> -->
+    </div> 
 </body>
 </html>
