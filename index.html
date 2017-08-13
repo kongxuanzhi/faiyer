@@ -1,73 +1,90 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>flex test page</title>
     <style type="text/css">
-      body {
-        background: #3c3f41;
-      }
-
-      .container {
-        width: 1200px;
-        height: 500px;
-        /*box-shadow: 10px 10px 5px #888888;*/
-        margin: 100px auto;
-        display: flex;   /* flex | inline-flex | -webkit-flex Safari */
-        flex-direction: row;  /*row | row-reverse | column | column-reverse; */
-        flex-wrap: wrap; /* nowrap | wrap | wrap-reverse; */
-        flex-flow: row wrap;  /* <flex-direction> || <flex-wrap>; */
-        justify-content: space-around; /*flex-start | flex-end | center | space-between | space-around;*/
-        align-items: center; /* flex-start | flex-end | center | baseline | stretch; */
-        align-content: center; /* 定义了多根轴线的对齐方式 项目只有一根轴线 该属性不起作用flex-start | flex-end | center | space-between | space-around | stretch; */
-      }
-
-      .child {
-      /*  width: 200px;
+        body {
+            background: #3c3f41;
+        }
+        
+        .container {
+            width: 1200px;
+            height: 500px;
+            /*box-shadow: 10px 10px 5px #888888;*/
+            margin: 100px auto;
+            display: flex;
+            /* flex | inline-flex | -webkit-flex Safari */
+            flex-direction: row;
+            /*row | row-reverse | column | column-reverse; */
+            flex-wrap: wrap;
+            /* nowrap | wrap | wrap-reverse; */
+            flex-flow: row wrap;
+            /* <flex-direction> || <flex-wrap>; */
+            justify-content: space-around;
+            /*flex-start | flex-end | center | space-between | space-around;*/
+            align-items: center;
+            /* flex-start | flex-end | center | baseline | stretch; */
+            align-content: center;
+            /* 定义了多根轴线的对齐方式 项目只有一根轴线 该属性不起作用flex-start | flex-end | center | space-between | space-around | stretch; */
+        }
+        
+        .child {
+            /*  width: 200px;
         height: 200px;*/
-        background-color: orange;
-        box-shadow: 10px 10px 5px #888888;
-       /*  flex-grow:;
+            background-color: orange;
+            box-shadow: 10px 10px 5px #888888;
+            /*  flex-grow:;
         flex-shrink:;
         flex-basis:;
         flex:;
         align-self:; */
-      }
-      .child-1 {
-        height: 200px;
-        order: 2;
-        flex-grow: 0;
-      }
-      .child-2 {
-        height: 300px;
-        order: 1;
-        flex-grow: 0;
-
-      }
-      .child-3 {
-        height: 360px;
-        order: 3;
-        flex-grow: 2;
-        flex-shrink: 0; /* 0 空间不足不缩小|1 空间不足缩小 default 1*/
-        flex-basis: auto; /* <length> | auto; default auto 定义了在分配多余空间之前，项目占据的主轴空间（main size） */
-        flex:0 1 auto;/*  flex属性是flex-grow, flex-shrink 和 flex-basis的简写  该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。*/
-        align-self: flex-end; /* align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。 */
-      }
-      .child-4 {
-        height: 450px;
-        flex-grow: 0;
-      }
+        }
+        
+        .child-1 {
+            height: 200px;
+            order: 2;
+            flex-grow: 0;
+        }
+        
+        .child-2 {
+            height: 300px;
+            order: 1;
+            flex-grow: 0;
+        }
+        
+        .child-3 {
+            height: 360px;
+            order: 3;
+            flex-grow: 2;
+            flex-shrink: 0;
+            /* 0 空间不足不缩小|1 空间不足缩小 default 1*/
+            flex-basis: auto;
+            /* <length> | auto; default auto 定义了在分配多余空间之前，项目占据的主轴空间（main size） */
+            flex: 0 1 auto;
+            /*  flex属性是flex-grow, flex-shrink 和 flex-basis的简写  该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。*/
+            align-self: flex-end;
+            /* align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。 */
+        }
+        
+        .child-4 {
+            height: 450px;
+            flex-grow: 0;
+        }
     </style>
 </head>
+
 <body>
     <!-- <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool">阮一峰教程</a> -->
     <a href="words.html">New Words</a>
-     <div class="container">
-      <!-- <div class="child child-1"> -->
-        <img class="child" src="./images/design/observerPattern.png">
-      <!-- </div> -->
-    <!--   <div class="child child-2">2</div>
+    <div class="container">
+        <!-- <div class="child child-1"> -->
+        <img class="child" src="./images/design/state-pattern.png">
+        <!-- </div> -->
+        <!--   <div class="child child-2">2</div>
       <div class="child child-3">3</div>
       <div class="child child-4">4</div> -->
-    </div> 
+    </div>
 </body>
+
 </html>
