@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>faiyer Website</title>
+    <style type="text/css">
+        body {
+            /*background: #3c3f41;*/
+            background-image: url('./images/img/bg.jpg');
+        }
+        .container {
+            width: 1200px;
+            height: 500px;
+            /*box-shadow: 10px 10px 5px #888888;*/
+            margin: 100px auto;
+            display: flex;
+            /* flex | inline-flex | -webkit-flex Safari */
+            flex-direction: row;
+            /*row | row-reverse | column | column-reverse; */
+            flex-wrap: wrap;
+            /* nowrap | wrap | wrap-reverse; */
+            flex-flow: row wrap;
+            /* <flex-direction> || <flex-wrap>; */
+            justify-content: space-around;
+            /*flex-start | flex-end | center | space-between | space-around;*/
+            align-items: center;
+            /* flex-start | flex-end | center | baseline | stretch; */
+            align-content: center;
+            /* 定义了多根轴线的对齐方式 项目只有一根轴线 该属性不起作用flex-start | flex-end | center | space-between | space-around | stretch; */
+        }
+
+        .child {
+            /*  width: 200px;
+        height: 200px;*/
+            /*background-color: orange;
+        box-shadow: 10px 10px 5px #888888;*/
+            /*  flex-grow:;
+        flex-shrink:;
+        flex-basis:;
+        flex:;
+        align-self:; */
+        }
+
+        .child-1 {
+            height: 200px;
+            order: 2;
+            flex-grow: 0;
+        }
+
+        .child-2 {
+            height: 300px;
+            order: 1;
+            flex-grow: 0;
+        }
+
+        .child-3 {
+            height: 360px;
+            order: 3;
+            flex-grow: 2;
+            flex-shrink: 0;
+            /* 0 空间不足不缩小|1 空间不足缩小 default 1*/
+            flex-basis: auto;
+            /* <length> | auto; default auto 定义了在分配多余空间之前，项目占据的主轴空间（main size） */
+            flex: 0 1 auto;
+            /*  flex属性是flex-grow, flex-shrink 和 flex-basis的简写  该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。*/
+            align-self: flex-end;
+            /* align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。 */
+        }
+
+        .child-4 {
+            height: 450px;
+            flex-grow: 0;
+        }
+
+        p {}
+
+        .pic {
+            text-align: center;
+        }
+
+        .note {
+            padding: 50px;
+            background: #3c3f41;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="words.html">New Words</a>
+    <div>
+        <!--<div class="container">-->
+        <div class="pic">
+            <img class="child" src="./images/img/prototype.png" />
+            <!--<img class="child" src="./images/design/state-pattern.png">-->
+        </div>
+        <div class="note">
+            <p>
+                每个对象实例都有个属性成员用于指向到它的instanceof对象（父对象）的原型（prototype）
+                <br /> 我们把这种层层指向父原型的关系称为 原型链： prototype chian
+                <br /> 原型也具有父原型， 因为它往往也是一个对象实例， 除非我们人为地去改变它
+                <br /> 在JavaScript中，一切都是对象，函数是第一型
+                <br /> Function和Object都是函数的实例
+                <br /> Function的父原型指向到Fucntion的原型
+                <br /> Function.prototype的父原型是Object的原型
+                <br /> Object的父原型也指向到Fucntion的原型
+                <br /> Object.prototype是所有父原型的顶层
+                <br /> 在SpiderMonkey引擎中，父原型可以通过__proto__进行访问
+                <br /> prototype 访问的是原型
+                <br /> __proto__ 访问的是父原型
+                <br /> instanceof 访问的是原型链的父类<br />
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
