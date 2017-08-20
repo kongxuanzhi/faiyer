@@ -34,6 +34,7 @@
             overflow: hidden;
             position: relative;
             padding: 0px 60px;
+            background-image: url('./static/images/img/bg.jpg')
         }
         
         .page {
@@ -182,7 +183,7 @@
             border: 1px solid red;
         }
         
-        @media screen and (max-width: 400px) {
+        @media screen and (max-width: 800px) {
             img {
                 width: 100%;
                 height: auto;
@@ -192,6 +193,7 @@
             }
             #pageContain {
                 padding: 0;
+                overflow: scroll;
             }
             .page {
                 display: block;
@@ -200,6 +202,7 @@
                 position: static;
                 margin-bottom: 10px;
                 border-bottom: 10px solid rgba(204, 204, 204, 0.63);
+                overflow: scroll;
             }
         }
     </style>
