@@ -65,9 +65,7 @@
             -webkit-transition-duration: 0ms !important;
         }
         
-        .img {
-            /*max-height: 100%;*/
-            /*max-width: 100%;*/
+        img {
             width: 100%;
         }
         
@@ -183,11 +181,7 @@
             border: 1px solid red;
         }
         
-        @media screen and (max-width: 800px) {
-            img {
-                width: 100%;
-                height: auto;
-            }
+        @media screen and (max-width: 500px) {
             #main nav {
                 display: none;
             }
@@ -196,10 +190,12 @@
                 overflow: scroll;
             }
             .page {
-                display: block;
-                height: auto;
+                height: 100%;
+                line-height: 100%;
                 width: 100%;
-                position: static;
+                position: absolute;
+                top: 50%;
+                left: 0px;
                 margin-bottom: 10px;
                 border-bottom: 10px solid rgba(204, 204, 204, 0.63);
                 /*overflow: scroll;*/
