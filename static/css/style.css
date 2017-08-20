@@ -1,0 +1,109 @@
+nav {
+    background-color: #333;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+}
+
+nav li a:hover,
+#menuIcon:hover {
+    color: #DDD;
+}
+
+#menuIcon {
+    display: none;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    text-decoration: none;
+    font-family: arial;
+}
+
+aside {
+    width: 15%;
+    float: left;
+}
+
+.post {
+    width: 70%;
+    margin: 0 auto;
+    float: left;
+}
+
+.grid {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /*flex-shrink: 0;*/
+}
+
+.grid .item {
+    width: 25%;
+    height: 150px;
+    background-color: #DDD;
+    display: inline-block;
+}
+
+
+/*footer*/
+
+footer {
+    width: 100%;
+    text-align: center;
+    clear: both;
+}
+
+footer li {
+    display: inline-block;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 650px) {
+    aside {
+        display: none;
+    }
+    .post {
+        width: 100%;
+        float: none;
+        padding: 5px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    nav ul {
+        display: none;
+        padding: 0;
+        margin: 0 5px;
+    }
+    #menuIcon {
+        display: block;
+        text-align: right;
+        padding: 0 5px;
+        border-bottom: 1px #9c9c9c solid;
+    }
+    nav ul li {
+        width: 100%;
+    }
+    nav ul li:hover {
+        background-color: #555;
+    }
+    .grid .item {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
