@@ -1,5 +1,6 @@
 nav {
     background-color: #333;
+    display: none;
 }
 
 nav li {
@@ -68,6 +69,7 @@ footer li {
 
 img {
     max-width: 100%;
+    opacity: .6;
 }
 
 @media only screen and (max-width: 650px) {
