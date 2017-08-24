@@ -46,8 +46,8 @@
         width: 1160px !important;
         margin: 0 auto;
     }
-/*
-    div, header, ul, li, span {
+
+   /* div, header, li, span {
         border: 1px dashed red;
     }
 */
@@ -73,19 +73,31 @@
 
     #main li {
         text-align: center;
-        font-size: 14px;
         cursor: pointer;
     }
 
     .main-nav li {
         margin: 0 15px;
         float: left;
+        font-size: 14px;
         height: 55px;
+        position: relative;
     }
     .main-nav li:hover .drop-down {
         display: block;
     }
+
+    .main-nav li:hover a {
+        color: #ffffff;
+    }
+    
     .main-nav li a {
+        color: #928686;
+        display: block;
+        height: 45px;
+    }
+    
+    .active {
         color: #ffffff;
     }
 
@@ -101,7 +113,11 @@
 
     .drop-down {
         display: none;
-        position: relative;
+        position: absolute;
+        left: -16px;
+       /* box-shadow: 2px 3px 8px #f3f0f0;
+        border-bottom-left-radius: 24px;
+        border-bottom-right-radius: 24px;*/
     }
 
     .drop-down li {
@@ -109,7 +125,22 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
-        width: 130px;
+        width: 100px;
+        height: 23px;
+        line-height: 23px;
+        font-size: 12px;
+        margin: 0;
+        background-color: #090723;
+        color: #d4d4d4;
+        padding: 7px 15px;
+        border-radius: 4px;
+        text-align: left!important;
+    }
+
+    .drop-down li:hover {
+        opacity: 0.5;
+        background-color: #39365a;
+        color: #ffffff;
     }
 
     </style>
@@ -125,48 +156,38 @@
                 <nav>
                     <ul class="main-nav">
                         <li>
-                            <a href="">首页</a>
-                            <ul class="drop-down">
-                                <li>a</li>
-                                <li>a</li>
-                                <li>a</li>
-                                <li>a</li>
-                            </ul>
+                            <a href="" class="active">首页</a>
                         </li>
                         <li>
                             <a href="">图标库</a>
                             <ul class="drop-down">
-                                <li>a</li>
-                                <li>a</li>
-                                <li>a</li>
-                                <li>a</li>
+                                <li>官方图标库</li>
+                                <li>多色图标库</li>
+                                <li>所有图标库</li>
                             </ul>
                         </li>
                         <li>
                             <a href="">图标管理</a>
                             <ul class="drop-down">
-                                <li>a</li>
-                                <li>a</li>
-                                <li>a</li>
-                                <li>a</li>
+                                <li>我的图标</li>
+                                <li>我的收藏</li>
+                                <li>我的项目</li>
                             </ul>
                         </li>
                         <li>
                             <a href="">帮助</a>
                             <ul class="drop-down">
-                                <li>a</li>
-                                <li>a</li>
-                                <li>a</li>
-                                <li>a</li>
+                                <li>功能介绍</li>
+                                <li>图表绘制</li>
+                                <li>代码应用</li>
+                                <li>相关文章</li>
                             </ul>
                         </li>
                         <li>
                             <a href="">...</a>
                             <ul class="drop-down">
-                                <li>a</li>
-                                <li>a</li>
-                                <li>a</li>
-                                <li>a</li>
+                                <li>在线字体</li>
+                                <li>功能建议</li>
                             </ul>
                         </li>
                     </ul>
@@ -195,6 +216,8 @@
                 </div>
             </div>
         </header>
+        <div style="height:200px; background-color:#090723;"></div>
+
        <!--  <div class="wrap">
             <div>文字图片</div>
             <div>背景星球</div>
