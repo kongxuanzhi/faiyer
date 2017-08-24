@@ -46,7 +46,11 @@
         width: 1160px !important;
         margin: 0 auto;
     }
-
+/*
+    div, header, ul, li, span {
+        border: 1px dashed red;
+    }
+*/
     header {
         height: 55px;
         background-color: #090723;
@@ -63,17 +67,26 @@
     .logo a {
         color: #ffffff;
     }
-    nav {
+    .main-nav {
         float: left;
     }
-    nav ul {
 
+    #main li {
+        text-align: center;
+        font-size: 14px;
+        cursor: pointer;
     }
-    nav ul li {
-       float: left;
-       color: #ffffff;
-       margin-left: 20px;
-       font-size: 14px;
+
+    .main-nav li {
+        margin: 0 15px;
+        float: left;
+        height: 55px;
+    }
+    .main-nav li:hover .drop-down {
+        display: block;
+    }
+    .main-nav li a {
+        color: #ffffff;
     }
 
     .nav_right {
@@ -84,6 +97,19 @@
     .nav_right ul li {
         margin: 0 13px;
         float: left;
+    }
+
+    .drop-down {
+        display: none;
+        position: relative;
+    }
+
+    .drop-down li {
+        float: none;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 130px;
     }
 
     </style>
@@ -97,51 +123,51 @@
                     <a href="">iconfont</a>
                 </div>
                 <nav>
-                    <ul>
+                    <ul class="main-nav">
                         <li>
-                            <span>首页</span>
-                            <div>
-                                <span>a</span>
-                                <span>b</span>
-                                <span>c</span>
-                                <span>d</span>
-                            </div>
+                            <a href="">首页</a>
+                            <ul class="drop-down">
+                                <li>a</li>
+                                <li>a</li>
+                                <li>a</li>
+                                <li>a</li>
+                            </ul>
                         </li>
                         <li>
-                            <span>图标库</span>
-                            <div>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
+                            <a href="">图标库</a>
+                            <ul class="drop-down">
+                                <li>a</li>
+                                <li>a</li>
+                                <li>a</li>
+                                <li>a</li>
+                            </ul>
                         </li>
                         <li>
-                            <span>图标管理</span>
-                            <div>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
+                            <a href="">图标管理</a>
+                            <ul class="drop-down">
+                                <li>a</li>
+                                <li>a</li>
+                                <li>a</li>
+                                <li>a</li>
+                            </ul>
                         </li>
                         <li>
-                            <span>帮助</span>
-                            <div>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
+                            <a href="">帮助</a>
+                            <ul class="drop-down">
+                                <li>a</li>
+                                <li>a</li>
+                                <li>a</li>
+                                <li>a</li>
+                            </ul>
                         </li>
                         <li>
-                            <span>...</span>
-                            <div>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
+                            <a href="">...</a>
+                            <ul class="drop-down">
+                                <li>a</li>
+                                <li>a</li>
+                                <li>a</li>
+                                <li>a</li>
+                            </ul>
                         </li>
                     </ul>
                 </nav>
@@ -149,7 +175,7 @@
                     <ul>
                         <li>
                             <div>
-                                <i></i> 
+                                <i></i>
                                 <input type="" name="" />
                             </div>
                         </li>
@@ -165,14 +191,14 @@
                         <li>
                             <a href="">D</a>
                         </li>
-                    </ul>                
+                    </ul>
                 </div>
             </div>
         </header>
        <!--  <div class="wrap">
             <div>文字图片</div>
             <div>背景星球</div>
-            <div>图标</div> 
+            <div>图标</div>
         </div> -->
        <!--  <div class="wrap content">
             <ul>

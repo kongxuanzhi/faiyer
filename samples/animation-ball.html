@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: #eee;
+    }
+    div
+    {
+      width: 169px;
+      height: 200px;
+      background: url(./img/balloon.png);
+      position: relative;
+      border-radius: 50%;
+      /*left: 50%;*/
+      animation: myfirst 2s linear, mymove 500ms 2s alternate infinite;
+      /*box-shadow: 7px 4px 7px #666;*/
+    }
+
+    @keyframes myfirst
+    {
+      from {top:500px;}
+      to {top:0px;}
+    }
+
+    @keyframes mymove
+    {
+      from {top:0px;}
+      to {top:30px;}
+    }
+  </style>
+</head>
+<body>
+  <p><strong>注释：</strong>Internet Explorer 9 以及更早的版本不支持 animation-iteration-count 属性。</p>
+</body>
+</html>
