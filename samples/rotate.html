@@ -42,11 +42,17 @@
             /* Opera */
             transform: rotate(-8deg);
         }
+
+        #div1 {box-sizing:border-box; height:200px; width:200px; background:red; margin:10px; border:1px solid #000; padding:20px;}
+        #div2 {box-sizing:content-box; height:200px; width:200px; background:red; margin:10px; border:1px solid #000; padding:20px;}
+         
     </style>
 </head>
 
 <body>
 
+    <div id="div1">border-box</div>
+    <div id="div2">content-box</div>
     <div class="polaroid rotate_left">
         <img src="./img/ballade_dream.jpg" alt="郁金香" width="284" height="213" />
         <p class="caption">上海鲜花港的郁金香，花名：Ballade Dream。</p>
