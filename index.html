@@ -3,7 +3,14 @@
 <head>
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
   <style>
-  
+
+    body,
+    div,
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
     ::-webkit-scrollbar
     {
         width: 4px;
@@ -45,11 +52,14 @@
     }
 
     @media only screen and (max-width: 500px) {
-        .main {
+        body {
             /*margin: 0 auto;*/
+            background: url('./static/images/img/girl.jpg') repeat-y;
+        }
+        .main {
             padding: 0 10px;
             width: auto;
-            background: url()!important;
+            margin-right: 10px;
         }
 
         canvas {
