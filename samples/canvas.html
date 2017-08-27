@@ -2,10 +2,36 @@
 <html>
 <head>
   <style>
+   	::-webkit-scrollbar
+    {
+        width: 4px;
+        background-color: red;
+    }
+    
+    /*定义滚动条轨道 内阴影+圆角*/
+    ::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+    
+    /*定义滑块 内阴影+圆角*/
+    ::-webkit-scrollbar-thumb
+    {
+        border-radius: 2px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #36d860;
+    }
     body {
       background-color: #eee;
       text-align: center;
     }
+    .main {
+			margin: 0 auto;
+			padding: 0 60px;
+    }
+
 		canvas {
 			float: left;
 			margin: 10px 10px; 
@@ -14,36 +40,41 @@
   </style>
 </head>
 <body>
-	<canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
-	Your browser does not support the HTML5 canvas tag.
-	</canvas>	
-	<canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
-	Your browser does not support the HTML5 canvas tag.
-	</canvas><canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
-	Your browser does not support the HTML5 canvas tag.
-	</canvas><canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
-	Your browser does not support the HTML5 canvas tag.
-	</canvas><canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
-	Your browser does not support the HTML5 canvas tag.
-	</canvas><canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
-	Your browser does not support the HTML5 canvas tag.
-	</canvas>
-<canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
-	Your browser does not support the HTML5 canvas tag.
-	</canvas>
-<canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
-	Your browser does not support the HTML5 canvas tag.
-	</canvas>
-
+	<div class="main">
+		<canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+		Your browser does not support the HTML5 canvas tag.
+		</canvas>	
+		<canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+		Your browser does not support the HTML5 canvas tag.
+		</canvas><canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+		Your browser does not support the HTML5 canvas tag.
+		</canvas><canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+		Your browser does not support the HTML5 canvas tag.
+		</canvas><canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+		Your browser does not support the HTML5 canvas tag.
+		</canvas>
+		<canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+		Your browser does not support the HTML5 canvas tag.
+		</canvas>
+		<canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+		Your browser does not support the HTML5 canvas tag.
+		</canvas>
+		<canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+		Your browser does not support the HTML5 canvas tag.
+		</canvas>
+		<div style="clear: both"></div>
+	</div>
 	<script>
-		let shapes = [[3, 5, 1, 4, 2, 6, 7, 9, 8],
-								[1, 5, 1, 5, 6, 6, 7, 9, 8],
-								[7, 9, 8],
-								[1, 5, 1, 6],
-								[5, 1, 5, 6, 4, 9, 3, 7, 8, 2, 5],
-								[4, 1, 3, 4, 9, 5, 6, 7, 4, 8],
-								[1, 3, 4, 6, 7, 9],
-								[4, 2, 8, 7, 3, 9, 1]];
+		let shapes = [
+									[3, 5, 1, 4, 2, 6, 7, 9, 8],
+									[1, 5, 1, 5, 6, 6, 7, 9, 8],
+									[7, 9, 8],
+									[1, 5, 1, 6],
+									[5, 1, 5, 6, 4, 9, 3, 7, 8, 2, 5],
+									[4, 1, 3, 4, 9, 5, 6, 7, 4, 8],
+									[1, 3, 4, 6, 7, 9],
+									[4, 2, 8, 7, 3, 9, 1]
+								];
 
 		let ctxs = []
 		function initContext() {
