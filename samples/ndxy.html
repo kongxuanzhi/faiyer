@@ -79,7 +79,7 @@
             list-style: none;;
         }
         .wrap {
-            width: 1160px !important;
+            width: 1009px !important;
             margin: 0 auto;
         }
         /*div, header, li, span {
@@ -90,93 +90,54 @@
             outline: none;
         }
         header {
-            height: 55px;
-            background-color: #090723;
-            line-height: 55px;
+            height: 100px;
+            /*background-color: transparent;*/
+            background-color: #CAE7ED;
+            line-height: 100px;
             position: relative;
             z-index: 10000;
         }
         .logo {
-            width: 125px;
-            height: 55px;
+            width: 10em;
+            height: 100px;
             text-align: center;
             float: left;
+            font-size: 1.5em;
         }
         .logo a {
-            color: #ffffff;
+            color: #0C3A92;
         }
-        .main-nav {
-            float: left;
-        }
+
         #main li {
             text-align: center;
             cursor: pointer;
         }
-        .main-nav li {
-            margin: 0 15px;
-            float: left;
-            font-size: 14px;
-            height: 55px;
-            position: relative;
-        }
-        .main-nav li:hover .drop-down {
-            display: block;
-        }
-        .main-nav li:hover a {
-            color: #ffffff;
-        }
 
-        .main-nav li a {
-            color: #928686;
-            display: block;
-            height: 45px;
-        }
-
-        .active {
-            color: #ffffff !important;
-        }
-
-        .drop-down {
-            display: none;
-            position: absolute;
-            left: -16px;
-            background-color: #090723;
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-            /* box-shadow: 2px 3px 8px #f3f0f0;
-            border-bottom-left-radius: 24px;
-            border-bottom-right-radius: 24px;*/
-        }
-        .drop-down li {
-            float: none;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            width: 100px;
-            height: 23px;
-            line-height: 23px;
-            font-size: 12px;
-            margin: 0;
-            background-color: #090723;
-            color: #d4d4d4;
-            padding: 7px 15px;
-            border-radius: 10px;
-            text-align: left!important;
-        }
-        .drop-down li:hover {
-            opacity: 0.5;
-            background-color: #39365a;
-            color: #ffffff;
-        }
-        .nav_right {
+        .nav-right {
             float: right;
-            height: 55px;
+            height: 100px;
         }
-        .nav_right ul li {
+        .nav-right ul li {
             margin: 0 13px;
             float: left;
         }
-        .nav_right li:first-child input {
+
+        .nav-right .nav-btn {
+            border: 1px solid #fff;
+            border-radius: 5px;
+            width: 5em;
+            height: 3em;
+            text-align: center;
+            position: relative;
+        }
+
+        .nav-right .nav-btn i {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+        }
+
+        .nav-right .search input {
             box-sizing: border-box;
             border-radius: 15px;
             border: 1px solid #928686;
@@ -188,26 +149,27 @@
             padding: 0px 30px 1px 15px;
             transition: all .2s ease-in-out;
         }
-        .nav_right li:first-child div {
+        /*.nav-right li:first-child div {
             position: relative;
         }
 
-        .nav_right li:first-child input:hover {
+        .nav-right li:first-child input:hover {
             border: 1px solid #fff;
         }
 
-        .nav_right li:first-child i {
+        .nav-right li:first-child i {
             position: absolute;
             right: 10px;
             top: 4px;
             color: #928686;
-        }
-        .nav_right li a i {
+        }*/
+        .nav-right li a i {
             font-size: 26px;
             color: #928686;
+            display: block;
         }
-        .nav_right li:hover i {
-            color: #fff;
+        .nav-right li:hover i {
+            /*color: #fff;*/
         }
 
         .plant-main {
@@ -420,66 +382,23 @@
             <header>
                 <div class="wrap">
                     <div class="logo">
-                        <a href="">iconfont</a>
+                        <a href="">牛迪希亚苏正之路</a>
                     </div>
-                    <nav>
-                        <ul class="main-nav">
-                            <li>
-                                <a href="" class="active">首页</a>
-                            </li>
-                            <li>
-                                <a href="">图标库</a>
-                                <ul class="drop-down">
-                                    <li>官方图标库</li>
-                                    <li>多色图标库</li>
-                                    <li>所有图标库</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="">图标管理</a>
-                                <ul class="drop-down">
-                                    <li>我的图标</li>
-                                    <li>我的收藏</li>
-                                    <li>我的项目</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="">帮助</a>
-                                <ul class="drop-down">
-                                    <li>功能介绍</li>
-                                    <li>图表绘制</li>
-                                    <li>代码应用</li>
-                                    <li>相关文章</li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="">...</a>
-                                <ul class="drop-down">
-                                    <li>在线字体</li>
-                                    <li>功能建议</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="nav_right">
+                    <div class="nav-right">
                         <ul>
-                            <li>
+                            <li class="nav-btn">
+                                <i class="iconfont icon-gerenzhanghu"></i>
+                                <a href="">我要报名</a>
+                            </li>
+                            <li class="nav-btn">
+                                <i class="iconfont icon-shangchuan"></i>
+                                <a href="">活动规则</a>
+                            </li>
+                            <li class="search">
                                 <div>
                                     <input type="" name="" placeholder="请选择图标和人" />
                                     <i class="iconfont icon-sousuo"></i>
                                 </div>
-                            </li>
-                            <li>
-                                <a href=""><i class="iconfont icon-gerenzhanghu"></i></a>
-                            </li>
-                            <li>
-                                <a href=""><i class="iconfont icon-shangchuan"></i></a>
-                            </li>
-                            <li>
-                                <a href=""><i class="iconfont icon-github"></i></a>
-                            </li>
-                            <li>
-                                <a href=""><i class="iconfont icon-gouwuche1"></i></a>
                             </li>
                         </ul>
                     </div>
