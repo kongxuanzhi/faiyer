@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> new document </title>
+  <script type="text/javascript">
+  function init()
+  {
+      var svg_obj = document.getElementById("svg_obj");
+      svg_obj.onclick = function(event)
+      {
+        var xmlns = "http://www.w3.org/2000/svg";
+        var tsvg_obj = document.getElementById("svg_obj");
+        var svg_img = document.createElementNS(xmlns,"image");
+        svg_img.href.baseVal = "balloon.png" ;
+        svg_img.setAttributeNS(null,"x",event.pageX);
+        svg_img.setAttributeNS(null,"y",event.pageY);
+        svg_img.setAttributeNS(null,"height","16px");
+        svg_img.setAttributeNS(null,"width","16px");
+        tsvg_obj.appendChild(svg_img);
+      }
+  }
+  </script>
+ </head>
+
+<body onload="init();">
+<svg id="svg_obj" version="1.1"
+xmlns="http://www.w3.org/2000/svg" style="width:220px;height:220px;border:1px solid black;"></svg>
+</body>
+</html>
