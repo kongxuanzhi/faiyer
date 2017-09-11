@@ -16,7 +16,7 @@
         width: 4px;
         background-color: red;
     }
-    
+
     /*定义滚动条轨道 内阴影+圆角*/
     ::-webkit-scrollbar-track
     {
@@ -24,7 +24,7 @@
         border-radius: 10px;
         background-color: #F5F5F5;
     }
-    
+
     /*定义滑块 内阴影+圆角*/
     ::-webkit-scrollbar-thumb
     {
@@ -46,7 +46,7 @@
 
     canvas {
         float: left;
-        margin: 10px 10px; 
+        margin: 10px 10px;
         border-radius: 10px;
         box-shadow: 2px 2px 2px gray;
     }
@@ -64,11 +64,23 @@
 
         canvas {
             float: left;
-            margin: 5px 5px; 
+            margin: 5px 5px;
             width: 100%;
             background: url('./static/images/img/girl.jpg') repeat-y;
             background-size: auto 100%;
         }
+    }
+
+    .todolist {
+        width: 500px;
+        color: white;
+        float: left;
+        height: 280px;
+        border: 1px solid white;
+        padding: 10px;
+        text-align: left;
+        margin-left: 10px;
+        font-family: '隶书' !important;
     }
 
   </style>
@@ -76,47 +88,47 @@
 <body>
     <div class="main">
         <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
-        Your browser does not support the HTML5 canvas tag.
-        </canvas>   
-        <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
-        Your browser does not support the HTML5 canvas tag.
-        </canvas><canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
-        Your browser does not support the HTML5 canvas tag.
-        </canvas><canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
-        Your browser does not support the HTML5 canvas tag.
-        </canvas><canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
-        Your browser does not support the HTML5 canvas tag.
         </canvas>
         <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
-        Your browser does not support the HTML5 canvas tag.
         </canvas>
         <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
-        Your browser does not support the HTML5 canvas tag.
         </canvas>
         <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
-        Your browser does not support the HTML5 canvas tag.
         </canvas>
         <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
-        Your browser does not support the HTML5 canvas tag.
         </canvas>
         <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
-        Your browser does not support the HTML5 canvas tag.
+        </canvas>
+        <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+        </canvas>
+        <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+        </canvas>
+        <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+        </canvas>
+        <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
         </canvas>
         <div style="clear: both"></div>
     </div>
+    <div class="todolist">
+        <label>To Do List:</label>
+        <ul>
+            <li>搭建vue环境, 将faiyer转化为vue</li>
+            <li>学习div转图片</li>
+        </ul>
+    </div>
     <script>
         let shapes = [
-                                    [3, 5, 1, 4, 2, 6, 7, 9, 8],
-                                    [1, 5, 1, 5, 6, 6, 7, 9, 8],
-                                    [4, 2, 6, 8, 7, 3, 1, 9],
-                                    [1, 5, 1, 6],
-                                    [5, 1, 5, 6, 4, 9, 3, 7, 8, 2, 5],
-                                    [4, 1, 3, 4, 9, 5, 6, 7, 4, 8],
-                                    [1, 3, 4, 6, 7, 9],
-                                    [4, 2, 8, 7, 3, 9, 1],
-                                    [1, 5, 3, 4, 6, 2, 7,8,9],
-                                    [1, 6, 7, 3,9,8,2,4]
-                                ];
+            [3, 5, 1, 4, 2, 6, 7, 9, 8],
+            [1, 5, 1, 5, 6, 6, 7, 9, 8],
+            [4, 2, 6, 8, 7, 3, 1, 9],
+            [1, 5, 1, 6],
+            [5, 1, 5, 6, 4, 9, 3, 7, 8, 2, 5],
+            [4, 1, 3, 4, 9, 5, 6, 7, 4, 8],
+            [1, 3, 4, 6, 7, 9],
+            [4, 2, 8, 7, 3, 9, 1],
+            [1, 5, 3, 4, 6, 2, 7,8,9],
+            [1, 6, 7, 3,9,8,2,4]
+        ];
 
         let ctxs = []
         function initContext() {
@@ -162,8 +174,8 @@
                 window.clearInterval(stop)
                 return;
             }
-            
-                let p = a[shape[i]]; 
+
+                let p = a[shape[i]];
             let np = a[shape[i + 1]];
 
             while (flag[np]) {
@@ -187,7 +199,7 @@
                 flag[p] = 1;
                 i++;
             }
-            stop = setInterval(line, 500);  
+            stop = setInterval(line, 500);
         }
 
         initContext()
@@ -202,9 +214,9 @@
         // drawS()
         for (let i=0;i<ctxs.length; i++) {
             draw(shapes[i], ctxs[i])
-            // setInterval(), 1000);  
+            // setInterval(), 1000);
         }
-    </script> 
+    </script>
 </body>
 </html>
 
@@ -213,3 +225,6 @@
 2. 扩展矩阵的个数，不止3*3
 3. 计算随机h生成的一串数字
  -->
+
+
+<!-- 4. 加一个todolist -->
