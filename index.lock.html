@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <style>
+
+    body,
+    div,
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    ::-webkit-scrollbar
+    {
+        width: 4px;
+        background-color: red;
+    }
+
+    /*定义滚动条轨道 内阴影+圆角*/
+    ::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+
+    /*定义滑块 内阴影+圆角*/
+    ::-webkit-scrollbar-thumb
+    {
+        border-radius: 2px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #36d860;
+    }
+    body {
+        background-color: #eee;
+        text-align: center;
+        background: url('./static/images/img/girl.jpg');
+        background-size: 100%;
+    }
+    .main {
+        margin: 0 auto;
+        padding: 0 60px;
+        width: 1160px;
+    }
+
+    canvas {
+        float: left;
+        margin: 10px 10px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px gray;
+    }
+
+    @media only screen and (max-width: 500px) {
+        body {
+            /*margin: 0 auto;*/
+            background: url('./static/images/img/girl.jpg') repeat-y;
+        }
+        .main {
+            padding: 0 10px;
+            width: auto;
+            margin-right: 10px;
+        }
+
+        canvas {
+            float: left;
+            margin: 5px 5px;
+            width: 100%;
+            background: url('./static/images/img/girl.jpg') repeat-y;
+            background-size: auto 100%;
+        }
+    }
+
+    .todolist {
+        width: 500px;
+        color: white;
+        float: left;
+        height: 280px;
+        border: 1px solid white;
+        padding: 10px;
+        text-align: left;
+        margin-left: 10px;
+        font-family: '隶书' !important;
+    }
+
+    .words {
+        width: 500px;
+        color: white;
+        float: right;
+        height: 280px;
+        border: 1px solid white;
+        padding: 10px;
+        text-align: left;
+        margin-left: 10px;
+        font-family: '隶书' !important;
+    }
+
+  </style>
+</head>
+<body>
+    <div class="main">
+        <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+        </canvas>
+        <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+        </canvas>
+        <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+        </canvas>
+        <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+        </canvas>
+        <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+        </canvas>
+        <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+        </canvas>
+        <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+        </canvas>
+        <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+        </canvas>
+        <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+        </canvas>
+        <canvas class="myCanvas" height="210" width="210" style="border:1px solid #d3d3d3;">
+        </canvas>
+        <div style="clear: both"></div>
+    </div>
+    <div class="todolist">
+        <label>To Do List:</label>
+        <ul>
+            <li>搭建vue环境, 将faiyer转化为vue</li>
+            <li>学习div转图片</li>
+        </ul>
+    </div>
+    <div class="words">
+        <label>警句:</label>
+        <ul>
+            <li>温饱思什么? 小康!!</li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        let shapes = [
+            [3, 5, 1, 4, 2, 6, 7, 9, 8],
+            [1, 5, 1, 5, 6, 6, 7, 9, 8],
+            [4, 2, 6, 8, 7, 3, 1, 9],
+            [1, 5, 1, 6],
+            [5, 1, 5, 6, 4, 9, 3, 7, 8, 2, 5],
+            [4, 1, 3, 4, 9, 5, 6, 7, 4, 8],
+            [1, 3, 4, 6, 7, 9],
+            [4, 2, 8, 7, 3, 9, 1],
+            [1, 5, 3, 4, 6, 2, 7,8,9],
+            [1, 6, 7, 3,9,8,2,4]
+        ];
+
+        let ctxs = []
+        function initContext() {
+            let contexts = document.getElementsByClassName("myCanvas");
+            for (let i = 0; i < contexts.length; i++) {
+                let ctx = contexts[i].getContext("2d");
+                ctx.strokeStyle = '#666fff';
+                ctx.lineWidth = 4;
+                ctx.lineCap="round";
+                ctx.lineJoin="round";
+                ctx.globalAlpha=0.8;
+                ctxs.push(ctx)
+            }
+        }
+
+        function draw(shape, ctx) {
+          let a = {1:[0, 0], 2:[1, 0], 3:[2, 0], 4:[0, 1], 5:[1, 1], 6:[2, 1], 7:[0, 2], 8:[1, 2], 9:[2, 2]}
+            let flag = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+            let i = 0;
+            let stop = 0;
+
+        let relPos = (pos) => {
+            let baseH = baseW = 35;
+            return [pos[0] * 70 + baseW, pos[1] * 70 + baseH];
+        }
+
+            for (let i = 1; i <= 9; i++) {
+                ctx.beginPath();ctx.arc(relPos(a[i])[0], relPos(a[i])[1], 6, 0, 2 * Math.PI);ctx.stroke();
+            }
+
+            let midPoint = (pre, next) => {
+                if ((pre[0]+next[0]) % 2 == 0 && (pre[1]+next[1]) % 2 == 0) {
+                    let mx = (pre[0]+next[0]) / 2;
+                    let my = (pre[1]+next[1]) / 2;
+                    return [mx, my];
+                }
+
+                return [];
+            }
+
+            let line = () => {
+            if (i >= shape.length - 1) {
+                window.clearInterval(stop)
+                return;
+            }
+
+                let p = a[shape[i]];
+            let np = a[shape[i + 1]];
+
+            while (flag[np]) {
+                    i++;
+                    if (i >= shape.length - 1) {
+                        window.clearInterval(stop)
+                    return;
+                    }
+                    np = a[shape[i + 1]];
+                }
+
+                let mid = midPoint(p, np)
+                if (mid.length > 0) {
+                        flag[mid] = 1;
+                }
+
+                ctx.beginPath();
+                ctx.moveTo(relPos(p)[0], relPos(p)[1]);
+                ctx.lineTo(relPos(np)[0], relPos(np)[1]);
+                ctx.stroke();
+                flag[p] = 1;
+                i++;
+            }
+            stop = setInterval(line, 500);
+        }
+
+        initContext()
+        // var i = 0
+        // let drawS = () => {
+        //  setInterval(draw(shapes[i], ctxs[i]), 1000)
+        //  i++
+        //  if (i == ctxs.length) {
+        //      return
+        //  }
+        // }
+        // drawS()
+        for (let i=0;i<ctxs.length; i++) {
+            draw(shapes[i], ctxs[i])
+            // setInterval(), 1000);
+        }
+    </script>
+</body>
+</html>
+
+<!--
+1. 重构代码到面向对象
+2. 扩展矩阵的个数，不止3*3
+3. 计算随机h生成的一串数字
+ -->
+
+
+<!-- 4. 加一个todolist -->
